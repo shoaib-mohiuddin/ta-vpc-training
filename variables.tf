@@ -15,6 +15,10 @@ variable "cidr_private" {
     description = "CIDR for Private Subnet"
 }
 
-variable "cidr_data" {
-    description = "CIDR for Data Subnet"
+variable "cidr_data_a" {
+    description = "CIDR for Data-a Subnet"
+}
+
+variable "cidr_data_b" {
+    description = "CIDR for Data-b Subnet"
 }

@@ -38,7 +38,12 @@ resource "aws_route_table_association" "private" {
   route_table_id = aws_route_table.nat_route_tbl.id
 }
 
-resource "aws_route_table_association" "data" {
-  subnet_id      = aws_subnet.data.id
+resource "aws_route_table_association" "data-a" {
+  subnet_id      = aws_subnet.data-a.id
+  route_table_id = aws_route_table.nat_route_tbl.id
+}
+
+resource "aws_route_table_association" "data-b" {
+  subnet_id      = aws_subnet.data-b.id
   route_table_id = aws_route_table.nat_route_tbl.id
 }

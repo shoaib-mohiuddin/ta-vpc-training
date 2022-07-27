@@ -24,12 +24,23 @@ resource "aws_subnet" "private" {
   }
 }
 
-resource "aws_subnet" "data" {
+resource "aws_subnet" "data-a" {
   vpc_id     = aws_vpc.Lab_VPC.id
-  cidr_block = var.cidr_data
+  cidr_block = var.cidr_data_a
+  availability_zone = "eu-west-1a"
 
   tags = {
-    Name = "Data"
+    Name = "Data-a"
+  }
+}
+
+resource "aws_subnet" "data-b" {
+  vpc_id     = aws_vpc.Lab_VPC.id
+  cidr_block = var.cidr_data_b
+  availability_zone = "eu-west-1b"
+
+  tags = {
+    Name = "Data-b"
   }
 }
 
@@ -57,21 +68,3 @@ resource "aws_nat_gateway" "nat_gw" {
   # on the Internet Gateway for the VPC.
   depends_on = [aws_internet_gateway.gw]
 }
-
-# resource "aws_route_table" "Public_RT" {
-#   vpc_id = aws_vpc.Lab_VPC.id
-
-#   route {
-#     cidr_block = var.cidr_public
-#     gateway_id = aws_internet_gateway.gw.id
-#   }
-
-#   route {
-#     ipv6_cidr_block        = "::/0"
-#     egress_only_gateway_id = aws_egress_only_internet_gateway.example.id
-#   }
-
-#   tags = {
-#     Name = "example"
-#   }
-# }
