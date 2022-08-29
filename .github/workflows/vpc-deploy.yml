@@ -17,7 +17,7 @@ jobs:
       - name: AWS Authentication
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: arn:aws:iam::699330879220:role/github-actions-oidc
+          role-to-assume: arn:aws:iam::045978437674:role/github-actions-oidc
           aws-region: eu-west-1
           role-session-name: GithubVPCDeploy
 
