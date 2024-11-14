@@ -53,7 +53,8 @@ resource "aws_internet_gateway" "gw" {
 }
 
 resource "aws_eip" "nat_eip" {
-  vpc      = true
+  #vpc      = true ## Deprecated
+  domain = "vpc"
 }
 
 resource "aws_nat_gateway" "nat_gw" {
