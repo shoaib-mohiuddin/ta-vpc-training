@@ -25,8 +25,8 @@ resource "aws_subnet" "private" {
 }
 
 resource "aws_subnet" "data-a" {
-  vpc_id     = aws_vpc.Lab_VPC.id
-  cidr_block = var.cidr_data_a
+  vpc_id            = aws_vpc.Lab_VPC.id
+  cidr_block        = var.cidr_data_a
   availability_zone = "eu-west-1a"
 
   tags = {
@@ -35,8 +35,8 @@ resource "aws_subnet" "data-a" {
 }
 
 resource "aws_subnet" "data-b" {
-  vpc_id     = aws_vpc.Lab_VPC.id
-  cidr_block = var.cidr_data_b
+  vpc_id            = aws_vpc.Lab_VPC.id
+  cidr_block        = var.cidr_data_b
   availability_zone = "eu-west-1b"
 
   tags = {

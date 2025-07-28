@@ -6,7 +6,7 @@ resource "aws_route_table" "internet_route_tbl" {
     gateway_id = aws_internet_gateway.gw.id
   }
 
-  
+
 
   tags = {
     Name = "internet-route-table"
@@ -21,7 +21,7 @@ resource "aws_route_table" "nat_route_tbl" {
     gateway_id = aws_nat_gateway.nat_gw.id
   }
 
-  
+
 
   tags = {
     Name = "nat-route-table"
